@@ -19,8 +19,8 @@ function App() {
     const AdminRoute = withAdminAuth(Admin);
     const PartnerRoute = withPartnerAuth(Partner);
     const UserRoute = withUserAuth(Profile);
-    // const UserMovieRoute = withUserAuth(SingleMovie);
-    // const UserBookShowRoute = withUserAuth(BookShow);
+    const UserMovieRoute = withUserAuth(SingleMovie);
+    const UserBookShowRoute = withUserAuth(BookShow);
 
     return (
         <div className="App">
@@ -36,6 +36,8 @@ function App() {
                     <Route path="/reset" element={<Reset />} />
                     <Route path="/movie/:id" element={<ProtectedRoute><SingleMovie/></ProtectedRoute>} />
                     <Route path="/book-show/:id" element={<ProtectedRoute><BookShow/></ProtectedRoute>} />
+                    {/*<Route path="/movie/:id" element={<UserMovieRoute />} />*/}
+                    {/*<Route path="/book-show/:id" element={<UserBookShowRoute />} />*/}
                     <Route path="/not-authorized" element={<NotAuthorized />} />
                 </Routes>
             </BrowserRouter>
