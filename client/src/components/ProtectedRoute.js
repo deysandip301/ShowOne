@@ -39,9 +39,11 @@ function ProtectedRoute({ children }) {
             onClick={() => {
               if (user.role === 'admin') {
                 navigate("/admin");
-              } else if (user.role === 'partner') {
+              }
+              else if (user.role === 'partner') {
                 navigate("/partner");
-              } else {
+              }
+              else {
                 navigate("/profile");
               }
             }}
